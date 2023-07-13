@@ -5,6 +5,10 @@ public class RestCallouts {
         request.setMethod('GET');
         Http http = new Http();
         HttpResponse response = http.send(request);
+        if(response.setStatusCode() == 200){
+            String jsonString = response.getBody();
+            
+        }
 
 
     }
