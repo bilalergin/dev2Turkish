@@ -1,1 +1,1 @@
-GstNumberCallout.getGstNumber('17AAICA3918J1CU');
+GstNumberCallout.getGstRecord('17AAICA3918J1CU');

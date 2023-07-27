@@ -1,45 +1,39 @@
 public class GstNumberCallout {
-    public static HttpResponse getGstNumber(String num) {
-        //1. Prepare HttpRequest and wrap all the necessary data in it
-        HttpRequest request = new HttpRequest();
-        request.setEndpoint('https://api.e-waybill.in/api/gstin/validate' );
-        request.setMethod('GET');
-
-        //2. Prepare Internet
-        Http httpObject = new Http();
-
-        //3. Send the request over the internet in order to receive the response
-        HttpResponse response = httpObject.send(request);
-        if(response.getStatusCode()==200){
-            String jsonBody =response.getBody();
-            System.debug(jsonBody);
-            List<GstNumberWrapper> cfw = (List<GstNumberWrapper>)json.deserialize(jsonBody, List<GstNumberWrapper>.class);
-            List<Gst_Record__c> cfl = new List<Gst_Record__c>();
-            for (GstNumberWrapper cf : cfw) {
-                Gst_Record__c c = new Gst_Record__c();
-                c.Name = cf.Name;
-                c.Gst_Number__c = cf.gstNumber;
-                c.Address__c = cf.address;
-                c.Pin_Code__c = cf.pinCode;
-                c.Valid__c = cf.valid;
-
-                cfl.add(c);
-                
-            }
-            if (!cfl.isEmpty()) {
-                try {
-                    insert cfl;
-                } catch (Exception ex) {
-                    System.debug(ex.getMessage());
-                }
-                
-            }
-        }
-
-        //4. Process the response
-        
-        return response;
-    }
-   
     
-}
+    public static HttpResponse getGstRecord(string gstNumber) {
+     //request hazırla
+     httpRequest request=new HttpRequest();
+     request.setEndpoint('https://api.e-waybill.in/api/gstin/validate?gstin='+gstNumber);
+     request.setMethod('GET');
+     //internet create et
+     Http http=new Http();
+     //requesti internet aracılığıyla external sisteme gönder
+     HttpResponse response=http.send(request);
+     
+     //Gelen datayı işle
+     if(response.getStatusCode()==200){
+         system.debug(response.getbody());
+         string jsonString=response.getbody();
+         GstWrapper 
+ gst=(GstWrapper)JSON.deserialize(jsonString,GstWrapper.class);
+         GST_Record__c rcd=new GST_Record__c();
+         rcd.Name=gst.name;
+         rcd.Gst_Number__c=gst.gstNumber;
+         rcd.Address__c=gst.address;
+         rcd.Pin_Code__c=gst.pinCode;
+         rcd.State__c=gst.state;
+         rcd.Valid__c=gst.valid;
+         insert rcd;
+     }
+     return response;
+    }
+    public class GstWrapper{
+     public string name;
+     public string gstNumber;
+     public string address;
+     public string pinCode;
+     public string state;
+     public boolean valid;
+     
+    }
+ }
