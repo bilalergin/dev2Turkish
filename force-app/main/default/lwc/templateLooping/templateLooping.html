@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="TEMPLATE LOOPING">
+      <div class="slds-var-m-around_medium">
+       <template for:each={countries} for:item="country" for:index="index">
+        <div key={country}>{country}</div>
+       </template>        
+      </div>
+      <div class="slds-var-m-around_medium">
+        <template for:each={contacts} for:item="con" for:index="index">
+           <li key={con.Id} class="slds-var-m-around_medium">
+                <strong>First Name : </strong>{con.firstName}
+                <strong>Last Name : </strong>{con.lastName}
+                <br>
+           </li>
+        </template>
+      </div>
+    </lightning-card>
+</template>
