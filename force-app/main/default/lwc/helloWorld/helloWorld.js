@@ -4,7 +4,7 @@ export default class HelloWorld extends LightningElement {
     name;//tanımsız undefined
     age = 25;
     fullName = 'Salesforce LWC';
-    chek =true;
+    check =true;
 
     detail = {
         name : "dummy",
