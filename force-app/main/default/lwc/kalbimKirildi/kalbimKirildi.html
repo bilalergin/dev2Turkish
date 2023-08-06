@@ -1,0 +1,19 @@
+<template>
+    <lightning-card icon-name="custom:custom1" title="Heart Example">
+        <div class="slds-var-m-around_medium"> 
+            
+            <lightning-input
+              type="checkbox"
+              label="Kalbimi Kirma :)"
+              onchange={clickHandler}  
+            ></lightning-input>
+            <template if:true={isChecked}>
+                <img src={KalbimKirildi} alt="Link">
+            </template>
+            <template if:false={isChecked}>
+                <img src={Kalbim} alt="Link">
+            </template>
+        </div> 
+    </lightning-card>
+    <audio src={music} data-id="musicId"> </audio>
+</template>

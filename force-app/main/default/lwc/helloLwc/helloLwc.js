@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-
+//! 02.08.2023
 export default class HelloLwc extends LightningElement {
     fullName= "John Doe";
     age=23;

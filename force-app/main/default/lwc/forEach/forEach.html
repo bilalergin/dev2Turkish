@@ -1,0 +1,28 @@
+<template>
+    <lightning-card title="FOR EACH LOOP">
+        <ul class="slds-has-dividers_around-space slds-var-m-around_medium">
+            <!-- <template for:each={persons} for:item="person">
+            <li key={person.id} class="slds-item">{person.name}</li>
+        </template> -->
+        <!-- üstteki kodlar for each için  -->
+        <!-- aşağıdaki kodlar iterator için iteratorü listenin elemanlarına farklı farklı özellikler atamak için kullanıyoruz-->
+        <template iterator:person={persons}>
+            <li key={person.value.id} class="slds-item">
+                <span if:true={person.first} style="color: red;" >
+                    {person.value.name}
+                </span>
+                <span if:false={person.first} style="color: blue;" >
+                    <span if:false={person.last} style="color: blue;" >
+                    
+                    {person.value.name}
+                </span>
+
+                </span>
+                <span if:true={person.last} style="color: red;" >
+                    {person.value.name}
+                </span>
+            </li>
+        </template>
+          </ul>
+    </lightning-card>
+</template>
