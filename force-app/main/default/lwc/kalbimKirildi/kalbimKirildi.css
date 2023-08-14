@@ -1,0 +1,16 @@
+.form-header{
+    background-color:pink;
+    text-transform: capitalize;
+    padding: 4px;
+    color: black;
+    text-align: center;
+    font-family: cursive;
+    font-style: normal;
+    border-radius: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px 2px 3px  black;
+    text-shadow:
+    1px 1px 1px red,
+    2px 2px 1px red;    
+}

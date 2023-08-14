@@ -1,19 +1,25 @@
 <template>
-    <lightning-card icon-name="custom:custom1" title="Heart Example">
-        <div class="slds-var-m-around_medium"> 
+    <div class="slds-text-align_center"> 
+    <lightning-card icon-name="custom:custom1" title="EMOTIONAL CHANGES" >
+        <div class=" slds-var-m-around_medium">
             
-            <lightning-input
-              type="checkbox"
-              label="Kalbimi Kirma :)"
-              onchange={clickHandler}  
+            <lightning-input 
+            class="form-header"
+            type="checkbox"
+            label="Don't break my heart !" 
+            onchange={clickHandler}  
             ></lightning-input>
+            <br> <br>
+           
             <template if:true={isChecked}>
-                <img src={KalbimKirildi} alt="Link">
+            <img  src={KalbimKirildi} alt="Link" width="300">
             </template>
             <template if:false={isChecked}>
-                <img src={Kalbim} alt="Link">
+            <img src={Kalbim} alt="Link" width="300">
             </template>
-        </div> 
-    </lightning-card>
-    <audio src={music} data-id="musicId"> </audio>
+            
+            </div>
+        </lightning-card>
+     <audio src={music} data-id="musicId"> </audio>
+    </div>
 </template>

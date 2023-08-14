@@ -1,0 +1,40 @@
+
+<template>
+    <lightning-card title="My Contact Record" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <template if:true={contact.data}>
+                <p><strong>{fullName}</strong> </p>
+                <p><strong>{title}</strong> </p>
+                    
+                    <lightning-icon icon-name="utility:call" size="x-small"></lightning-icon>                        
+                    <lightning-formatted-phone class="slds-var-m-bottom_medium" value={phone}></lightning-formatted-phone><br>
+                    <lightning-formatted-email value={email}></lightning-formatted-email>         
+
+                       
+            </template>
+        </div>
+    </lightning-card>
+</template>
+
+
+<!-- <template>
+    <lightning-card title="My Contact Record" icon-name="standard:contact">
+        <div class="slds-var-m-around_medium">
+            <template if:true={contact.data}>
+                <p><strong></strong> {fullName}</p>
+                <p><strong></strong> {title}</p>
+                <p>
+                    <strong></strong>
+                    <a href="mailto:{email}">
+                        <lightning-icon icon-name="standard:email" size="x-small"></lightning-icon>
+                        {email}
+                    </a>
+                </p>
+                <p>
+                    <strong>Phone:</strong>
+                    <a href="tel:{phone}">{phone}</a>
+                </p>
+            </template>
+        </div>
+    </lightning-card>
+</template> -->

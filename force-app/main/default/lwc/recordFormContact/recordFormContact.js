@@ -5,6 +5,8 @@ import LASTNAME_FIELD from '@salesforce/schema/Contact.LastName';
 import MOBILEPHONE_FIELD from '@salesforce/schema/Contact.MobilePhone';
 import { LightningElement } from 'lwc';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
+// Buraya import edip aşağıda göstermeye refencial integraty yöntemi deniyor
+// costant değişmeyecek ifade demek. Değişmeyecek ifadeleri büyük harfle yazıp developera bilgi vermiş oluyoruz
 //! 05.08.2023
 export default class RecordFormContact extends LightningElement {
     objectApiName=OBJ_CONTACT;
@@ -14,9 +16,9 @@ export default class RecordFormContact extends LightningElement {
         EMAIL_FIELD,
         MOBILEPHONE_FIELD];
 
-        changeHandler(){
+        changeHandler(){//burası function. apexteki metotlara denk gelir
             const evt=new ShowToastEvent({
-                title:'Contact status',
+                title:'Contact status',//bu bir objedir
                 message:'İşleminiz başarılı bir şekilde gerçekleşti.',
                 variant:'success'
             });

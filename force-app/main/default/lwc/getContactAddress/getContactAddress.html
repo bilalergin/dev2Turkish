@@ -1,0 +1,20 @@
+<template>
+    <lightning-card title="Get Contact Adress Record" icon-name="standard:contact">
+      <div class="slds-var-m-around_medium">
+        <template lwc:if={contact.data}> <!--buradaki lwc:if direktifinin adı koşullu renderingdir. Eğer contactta data varsa getir-->
+            <lightning-formatted-address
+            street={street}
+            city={city}
+            country={country}
+            province={state}
+            postal-code={postalCode}
+            show-static-map>
+        </lightning-formatted-address>
+          <!-- show-static-map haritada gösteriyor    -->
+        </template>
+         
+        
+      </div>
+    </lightning-card>
+    
+</template>

@@ -5,14 +5,14 @@
             object-api-name={objectApiName}
             record-id={recordId}
             >
-            <div class="slds-grid slds-gutters">
-                <div class="slds-col slds-size_2-of-3">
+            <div class="slds-grid slds-gutters"><!--Grid: Kolona böler, Gutters:Kolonlar arasında boşluk bıraktırır -->
+                <div class="slds-col slds-size_2-of-3"> <!--sol taraftaki colon 2 birim yer kapladı-->
                     <lightning-output-field field-name={fields.firstName} style="background-color:blueviolet"> </lightning-output-field>
                     <lightning-output-field field-name={fields.lastName}> </lightning-output-field>
                     <lightning-output-field field-name={fields.leadSource}> </lightning-output-field>
 
                 </div>
-                <div class="slds-col slds-size_1-of-3">
+                <div class="slds-col slds-size_1-of-3"><!--sağ taraftaki kolon bir birm yer kapladı-->
                     <lightning-output-field field-name={fields.title}> </lightning-output-field>
                 </div>
             </div>

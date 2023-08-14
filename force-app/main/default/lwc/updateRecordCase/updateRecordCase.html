@@ -1,0 +1,38 @@
+<template>
+    <lightning-layout>
+        <lightning-layout-item size="6">
+            <lightning-card title="Case detail">
+                <div class="slds-var-m-around_medium" style=" min-height: 200px;">
+                    <lightning-record-view-form
+                    object-api-name='Case'
+                    record-id={caseId}>
+
+                    <lightning-output-field field-name="CaseNumber"> </lightning-output-field>
+                    <lightning-output-field field-name="Subject"> </lightning-output-field>
+                    <lightning-output-field field-name="AccountId"> </lightning-output-field>
+                    <lightning-output-field field-name="Description"> </lightning-output-field>
+                </lightning-record-view-form>
+                </div>
+            </lightning-card>
+        </lightning-layout-item>
+
+
+
+
+        <lightning-layout-item size="6">
+            <lightning-card title="Update Case">
+                <div class="slds-var-m-around_medium" style=" min-height: 200px;">
+                    <lightning-textarea label="Enter subject to update" class="slds-var-m-around_medium" data-field="Subject" onchange={subjectHandler}>
+
+                    </lightning-textarea>
+                   <lightning-button 
+                      variant="brand"
+                      label="Update Case" 
+                      onclick={handleClick} 
+                    ></lightning-button>
+
+                </div>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+</template>

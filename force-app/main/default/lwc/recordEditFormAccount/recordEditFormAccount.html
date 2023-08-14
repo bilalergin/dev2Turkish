@@ -6,9 +6,9 @@
             record-id={recordId}
             >
             <lightning-output-field field-name={fields.name}></lightning-output-field>
-​
+
             <lightning-input-field field-name={fields.rating} onchange={changeHandler}> </lightning-input-field>
-​
+
             <template if:true={isIndustry}>
                 <lightning-input-field field-name={fields.industry}> </lightning-input-field>
             </template>
