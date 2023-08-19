@@ -1,0 +1,16 @@
+<template>
+    <!-- ÖRNEK 1:Accountun record page'inde bir quick action oluşturun.Tıklandığında bir delete buttonu görünsün ve user o delete butonuna bastığında açık olan sayfadaki record silinsin. -->
+    <lightning-card>
+        <lightning-quick-action-panel header="Bu recordu silmek istediğinize emin misin?" style="color:red">
+          <div class="slds-var-m-around_medium slds-align_absolute-center">
+            <lightning-button 
+              variant="destructive"
+              label="Delete Account" 
+              onclick={handleClick} 
+              icon-name="utility:delete"
+            ></lightning-button>
+          </div>
+          
+        </lightning-quick-action-panel>
+    </lightning-card>
+</template>

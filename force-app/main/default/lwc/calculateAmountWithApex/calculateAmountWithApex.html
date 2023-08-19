@@ -1,0 +1,15 @@
+<template>
+    <!-- ÖRNEK 2:Bir accountun record page'inde bir component ekleyelim.Componentte bir buton olsun ve açık olan account recordunun child opportunuty 'lerinin amount toplamını göstersin. -->
+    <lightning-card title="Total Amount of child Opp with apex imperative">
+        <div class=slds-var-m-around_medium>
+            <lightning-button 
+              variant="brand"
+              label="Calculate Amount" 
+              onclick={handleClick} 
+            ></lightning-button>
+            <template lwc:if={totalAmount}>
+                <div>{totalAmount}</div>
+            </template>
+        </div>
+    </lightning-card>
+</template>
