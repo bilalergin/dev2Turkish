@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Child to parent communication using custom event">
+        <div class="slds-var-m-around_medium">
+            <p class="slds-align_absolute-center">
+                Counter:<lightning-formatted-number value={counter}></lightning-formatted-number>
+            </p>
+        </div>
+        <c-c2p-custom-event-child
+        onsubtraction={handleSubtraction}
+        onaddition={handleAddition}
+        onmultiply={handleMultiply}></c-c2p-custom-event-child>
+    </lightning-card>
+</template>

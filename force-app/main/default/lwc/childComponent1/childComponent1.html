@@ -1,0 +1,19 @@
+<template>
+    <!--burada numara veriyoruz sehirlere-->
+    <strong>Cities of {country}</strong>
+    <template for:each={cityNumber} for:item="cNumber">
+        <div key={cNumber}>{cNumber}</div>
+    </template>
+</template>
+
+
+
+
+<!-- <template> -->
+    <!-- <strong>Cities of {country}</strong> -->
+    <!-- cities array olduğu için for each kullanıyoruz. Bunun için de template tagini kullanıyoruz -->
+    <!-- <template for:each={cities} for:item="city"> -->
+        <!-- for eachten dolayı div tagine key vermek zorundayız. Keye unique olan bir değer giriyoruz. Burada city unique. Id olduğu zaman onu yazıyoruz. Başka bir şey unique olursa onu yazıyoruz -->
+        <!-- <div key={city}>{city}</div> -->
+    <!-- </template> -->
+<!-- </template> -->
