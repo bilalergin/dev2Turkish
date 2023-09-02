@@ -1,0 +1,25 @@
+<template>
+  <lightning-card title="WhatsApp User-1">
+      <div class="slds-var-m-around_medium">
+          <h1>Message from User-2</h1>
+          <template lwc:if={recievedMessage}>
+              <template for:each={recievedMessage} for:item="message">
+                  <strong key={message}>{message}</strong><br key={message}>
+              </template>
+          </template>
+       <lightning-input 
+         type="text"
+         label="Enter some text"
+         onchange={inputHandler}
+       ></lightning-input>
+       <div class="slds-var-m-around_medium">
+          <button 
+          onclick={publishMessage}
+          >
+          <span>-></span>
+          </button>
+
+       </div>
+      </div>
+  </lightning-card>
+</template>
