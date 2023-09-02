@@ -1,0 +1,21 @@
+<template>
+    <lightning-card icon-name="standard:case" variant="Narrow">
+        <template if:true={cases} for:each={cases} for:item="cas" for:index="index">
+            <div class="slds-var-m-around_medium" key={cas.Id}>
+                <lightning-button 
+                  variant="base"
+                  label={cas.CaseNumber}
+                  onclick={getCase} 
+                  value={cas.Id}
+                >
+                {cas.CaseNumber}
+                </lightning-button>
+            </br>
+            <strong>Case Type :</strong>{cas.Type} </br>
+            <strong>Case Status :</strong>{cas.Status} </br>
+            <strong>Created Date :</strong>{cas.CreatedDate} </br>
+            <strong>Closed Date :</strong>{cas.ClosedDate} </br>
+            </div>
+        </template>
+    </lightning-card> 
+</template>
